@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return ["Meaning of life", 42];
+    return view('index', ['meaningOfLife' => 42]);
 });
 
 Route::get('/a-propos', function () {
