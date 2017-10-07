@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 class TweetsController extends Controller
 {
     /**
+     * Display an index of the resource
+     * @return Response
+     */
+    public function index()
+    {
+        $tweets = Tweet::orderBy('created_at', 'desc')->paginate(10);
+
+        return view('tweets.index', compact('tweets'));
+    }
+
+    /**
      * Display the create form
      * @return Response
      */
