@@ -10,7 +10,10 @@
 
     <title>Twitter | @yield('title')</title>
 </head>
-<body>
+<body style="padding-top: 8rem;">
+
+    <!-- Main navigation -->
+    @include('partials/_nav')
 
     @yield('content')
 
