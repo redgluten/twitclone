@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tweet;
 use Illuminate\Http\Request;
 
 class TweetsController extends Controller
@@ -24,6 +25,12 @@ class TweetsController extends Controller
     {
         $this->validate($request, ['content' => 'required|string|max:140']);
 
-        dd('Validation réussie');
+        $tweet = new Tweet;
+
+        $tweet->content = $request->content;
+
+        $tweet->save();
+
+        return redirect('/');
     }
 }
