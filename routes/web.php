@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    $tweets = DB::table('tweets')->get();
+    $tweets = App\Tweet::all();
 
     return view('index', ['tweets' => $tweets]);
 });
