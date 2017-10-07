@@ -24,7 +24,7 @@
                         </a>
 
                         <div class="media-body">
-                            <h5 class="media-heading">@??<small class="pull-right text-muted">{{ $tweet->created_at->format('d/m/Y') }}</small></h5>
+                            <h5 class="media-heading">@??<small class="pull-right text-muted">{{ $tweet->created_at->diffForHumans() }}</small></h5>
 
                             {{ $tweet->content }}
                         </div>
