@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return 'Test';
+    return ["Meaning of life", 42];
 });
 
 Route::get('/a-propos', function () {
