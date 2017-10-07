@@ -16,35 +16,21 @@
             <h1>Dernier tweets</h1>
 
             <div class="col-md-6">
-                <div class="media well">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="" alt="Avatar image">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">@toto<small class="pull-right text-muted">2h</small></h4>
-                        140 caractères c’est très peu pour dire pas grand chose…
-                    </div>
-                </div>
+                @foreach($tweets as $tweet)
+                    <div class="media well">
 
-                <div class="media well">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="" alt="Avatar image">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">@jeannotlapin<small class="pull-right text-muted">3h</small></h4>
-                        C’est comme si c’était 2005 à nouveau
-                    </div>
-                </div>
+                        <a class="media-left" href="#">
+                            <!-- Photo de profil -->
+                        </a>
 
-                <div class="media well">
-                    <a class="media-left" href="#">
-                        <img class="media-object" src="" alt="Avatar image">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">@napoleondu93<small class="pull-right text-muted">1j</small></h4>
-                        Du haut de cette application Laravel 5.3, 20000 lignes de codes vous contemplent
+                        <div class="media-body">
+                            <h5 class="media-heading">@??<small class="pull-right text-muted">{{ strftime('%d/%m/%Y', strtotime($tweet->created_at)) }}</small></h5>
+
+                            {{ $tweet->content }}
+                        </div>
+
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

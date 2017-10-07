@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $tweets = DB::table('tweets')->get();
+
+    return view('index', ['tweets' => $tweets]);
 });
 
 Route::get('/a-propos', function () {
