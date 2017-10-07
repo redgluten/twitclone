@@ -22,6 +22,8 @@ class TweetsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $this->validate($request, ['content' => 'required']);
+
+        dd('Validation réussie');
     }
 }

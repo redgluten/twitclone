@@ -11,6 +11,18 @@ Publier un nouveau tweet
                 <form action="{{ url('tweets') }}" method="POST">
                     {{ csrf_field() }}
 
+                    {{-- Erreurs --}}
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <p><strong>Houps&#xA0;!</strong> Veuillez corriger les éléments suivants&#xA0;:</p>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="form-group">
                         <label for="content">Votre tweet</label>
                         <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
