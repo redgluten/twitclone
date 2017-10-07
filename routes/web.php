@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('tweets/create', 'TweetsController@create');
 Route::post('tweets', 'TweetsController@store');
 Route::get('tweets/', 'TweetsController@index');
+Route::get('tweets/{id}/edit', 'TweetsController@edit');
+Route::put('tweets/{tweet}', 'TweetsController@update');
+Route::delete('tweets/{tweet}', 'TweetsController@destroy');
 
 Route::get('/a-propos', function () {
     return 'Ce clone de Twitter vous est proposé par Laravel et Open School Design';

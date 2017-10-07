@@ -75,4 +75,17 @@ class TweetsController extends Controller
 
         return redirect('/');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Tweet  $tweet
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Tweet $tweet)
+    {
+        Tweet::destroy($tweet->id);
+
+        return redirect('/tweets');
+    }
 }
