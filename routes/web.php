@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('index', ['tweets' => $tweets]);
 });
 
+Route::get('tweets/create', 'TweetsController@create');
+
 Route::get('/a-propos', function () {
     return 'Ce clone de Twitter vous est proposé par Laravel et Open School Design';
 });
