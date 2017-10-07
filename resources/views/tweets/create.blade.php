@@ -13,9 +13,10 @@ Publier un nouveau tweet
 
                     @include('partials._form-errors')
 
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}"">
                         <label for="content">Votre tweet</label>
                         <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
+                        <small class="text-danger">{{ $errors->first('content') }}</small>
                     </div>
 
                     <input type="submit" class="btn btn-primary">
