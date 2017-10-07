@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    $tweets = App\Tweet::all();
+    $tweets = App\Tweet::orderBy('created_at', 'desc')->get();
 
     return view('index', ['tweets' => $tweets]);
 });
