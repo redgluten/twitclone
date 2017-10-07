@@ -24,7 +24,7 @@
                         </a>
 
                         <div class="media-body">
-                            <h5 class="media-heading">@??<small class="pull-right text-muted">{{ strftime('%d/%m/%Y', strtotime($tweet->created_at)) }}</small></h5>
+                            <h5 class="media-heading">@??<small class="pull-right text-muted">{{ $tweet->created_at->format('d/m/Y') }}</small></h5>
 
                             {{ $tweet->content }}
                         </div>
