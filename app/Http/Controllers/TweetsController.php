@@ -14,4 +14,14 @@ class TweetsController extends Controller
     {
         return view('tweets.create');
     }
+
+    /**
+     * Store the newly created resource in DB.
+     * @param  Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        dd($request);
+    }
 }
