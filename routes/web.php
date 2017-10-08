@@ -35,3 +35,7 @@ Route::get('/contact', function () {
 Route::post('/contact', function () {
     return 'Désolé le formulaire de contact n’est pas encore prêt';
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
