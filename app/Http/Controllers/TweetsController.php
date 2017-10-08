@@ -40,6 +40,8 @@ class TweetsController extends Controller
 
         $tweet->content = $request->content;
 
+        $tweet->user_id = auth()->user()->id;
+
         $tweet->save();
 
         return redirect('/');
