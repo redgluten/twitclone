@@ -7,7 +7,7 @@ Accueil
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>Dernier tweets</h1>
+            <h1>Derniers tweets</h1>
 
             <div class="col-md-6">
 
@@ -17,7 +17,7 @@ Accueil
                             <!-- Photo de profil -->
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading">@??<small class="pull-right text-muted">{{ $tweet->created_at->diffForHumans() }}</small></h4>
+                            <h4 class="media-heading"><a href="{{ url('/users/' . $tweet->user_id) }}">{{ '@' . $tweet->user->name}}</a> <small class="pull-right text-muted">{{ $tweet->created_at->diffForHumans() }}</small></h4>
                             {{ $tweet->content }}
                         </div>
                     </div>
