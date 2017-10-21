@@ -21,7 +21,9 @@ Tweets
             <tbody>
                 @foreach ($tweets as $tweet)
                     <tr>
-                        <td>??</td>
+                        <td>
+                            <a href="{{ url('/users/' . $tweet->user_id) }}">{{ '@' . $tweet->user->name}}</a>
+                        </td>
                         <td>{{ $tweet->content }}</td>
                         <td>{{ $tweet->created_at->format('d/m/Y') }}</td>
                         <td>
